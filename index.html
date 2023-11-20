@@ -1,10 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
+    <script>
+        function validateDateOfBirth() {
+            // Get the input value
+            var dobInput = document.getElementById('dob').value;
+
+            // Parse the input value to a Date object
+            var dob = new Date(dobInput);
+
+            // Get the current date
+            var currentDate = new Date();
+
+            // Calculate the age
+            var age = currentDate.getFullYear() - dob.getFullYear();
+
+            // Check if the age is between 18 and 55
+            if (age >= 18 && age <= 55) {
+                return true;
+            } else {
+                alert('Invalid date of birth. Age must be between 18 and 55.');
+                return false;
+            }
+        }
+    </script>
 </head>
 
 <body>
